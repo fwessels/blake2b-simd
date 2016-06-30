@@ -148,8 +148,8 @@ TEXT ·blockAVXLoop(SB), 7, $0
     MOVQ   message+0(FP), DX  // DX: &p (message)
     MOVQ   message_len+8(FP), R8 // R8: len(message)
     SHRQ   $7, R8             // len(message) / 128
- 	CMPQ   R8, $0
- 	JEQ    complete
+    CMPQ   R8, $0
+    JEQ    complete
 
 loop:
     // Increment counter
@@ -770,9 +770,9 @@ noincr:                       //                       /* } */
     MOVOU  X3, 48(SI)         // out[6]+out[7] = X3
 
     // Increment message pointer and check if there's more to do
-	ADDQ   $128, DX           // message += 128
-	SUBQ   $1, R8
-	JNZ    loop
+    ADDQ   $128, DX           // message += 128
+    SUBQ   $1, R8
+    JNZ    loop
 
 complete:
     RET
