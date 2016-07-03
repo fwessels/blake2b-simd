@@ -20,7 +20,7 @@
 package blake2b
 
 //go:noescape
-func compressAVX2Loop(p []uint8, in, iv  , t, f, shffle, out []uint64)
+func compressAVX2Loop(p []uint8, in, iv, t, f, shffle, out []uint64)
 
 func compressAVX2(d *digest, p []uint8) {
 
